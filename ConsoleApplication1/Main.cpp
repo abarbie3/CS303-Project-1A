@@ -1,21 +1,30 @@
-//Names: Alyssa Barbee
+//Names: Alyssa Barbee, Aarohi Patel
 //Date: 
 //CS303 Project 1A
 
 #include "Project1A.h"
 
 int main() {
-    string expression;
-    cout << "Enter an infix expression: ";
-    getline(cin, expression);
 
     try {
-        int result = evaluate(expression);
-        cout << "Result: " << result << endl;
-    } catch (const exception &e) {
-        cerr << "Error: " << e.what() << endl;
-    }
+        vector<string> myExpressions = {
+            "1+2*3",
+            "2+2^2*3",
+            "1==2",
+            "1+3 > 2",
+            "(4>=4) && 0",
+            "(1+2)*3",
+            "++++2-5*(3^2)"
+        }; 
 
+        for (int i = 0; i < myExpressions.size(); ++i){
+            evaluate(myExpressions[i])
+        }
+
+    }
+    catch(...){
+        cout << "There was an unexpected error.\n";
+    }
+    
     return 0;
 }
-
