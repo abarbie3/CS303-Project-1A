@@ -77,7 +77,8 @@ int evaluate(const std::string& expression) {
     return values.top();
 }
 
-int Postfix_Evaluator(const std::string& expression) {
+//FIX: Originally for Postfix
+int Infix_Evaluator(const std::string& expression) {
 	// Be sure the stack is empty
 	while (!operand_stack.empty())
 		operand_stack.pop();
