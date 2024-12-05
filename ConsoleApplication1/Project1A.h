@@ -21,7 +21,7 @@ public:
     // Pop the top item off the stack
     void pop() {
         if (items.empty()) {
-            throw std::runtime_error("Stack is empty: Attempt to pop an element");
+            throw runtime_error("Stack is empty: Attempt to pop an element");
         }
         items.pop_back();
     }
@@ -29,7 +29,7 @@ public:
     // Access the top item of the stack
     T top() const {
         if (items.empty()) {
-            throw std::runtime_error("Stack is empty: Attempt to access top element");
+            throw runtime_error("Stack is empty: Attempt to access top element");
         }
         return items.back();
     }
@@ -47,6 +47,6 @@ public:
 
 int precedence(char operator_);
 int applyOperator(int a, int b, char operator_);
-int Postfix_Evaluator(const string& expression);
-int evaluate(const std::string& expression);
+int Infix_Evaluator(const string& expression);
+int evaluate(const string& expression);
 
