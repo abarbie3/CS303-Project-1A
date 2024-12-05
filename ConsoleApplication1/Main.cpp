@@ -18,7 +18,7 @@ int main() {
         }; 
 
         for (int i = 0; i < myExpressions.size(); ++i){
-            evaluate(myExpressions[i])
+            evaluate(myExpressions[i]);
         }
 
     }
