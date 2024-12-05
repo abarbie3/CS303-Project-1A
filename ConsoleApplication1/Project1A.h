@@ -47,6 +47,4 @@ public:
 
 int precedence(char operator_);
 int applyOperator(int a, int b, char operator_);
-int Infix_Evaluator(const string& expression);
-int evaluate(const string& expression);
-
+int infixEvaluator(const string& expression); 

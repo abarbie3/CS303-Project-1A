@@ -18,7 +18,7 @@ int applyOperator(int a, int b, char operator_) {
     return 0;
 }
 
-int evaluate(const string& expression) {
+int infixEvaluator(const string& expression) {
     myStack_with_vector<int> operands;
     myStack_with_vector<char> operators;
 
