@@ -13,9 +13,9 @@ int main() {
         "(4>=4) && 0",
         "(1+2)*3",
         "++++2-5*(3^2)"
-    }; 
+    };
 
-    for (int i = 0; i < myExpressions.size(); ++i){
+    for (int i = 0; i < myExpressions.size(); ++i) {
         infixEvaluator(myExpressions[i]);
     }
     // try {

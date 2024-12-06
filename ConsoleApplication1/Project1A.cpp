@@ -1,5 +1,9 @@
 #include "Project1A.h"
 
+//ADD: LESS THAN, COMPARISON, 
+
+
+
 int precedence(char operator_) {
     if (operator_ == '+' || operator_ == '-') return 1;
     if (operator_ == '*' || operator_ == '/') return 2;
@@ -14,6 +18,13 @@ int applyOperator(int a, int b, char operator_) {
     case '/':
         if (b == 0) throw runtime_error("Division by zero");
         return a / b;
+    case '^': return pow(a, b);
+    case '<': 
+        if (a < b) return 1;
+        else return 0;
+    case '>': return 0;
+        if (a > b) return 1;
+        else return 0;
     }
     return 0;
 }
@@ -24,6 +35,7 @@ int infixEvaluator(const string& expression) {
 
     for (size_t i = 0; i < expression.length(); i++) {
         if (isspace(expression[i])) continue;
+        if (expression[i] == '+') continue;
 
         if (isdigit(expression[i])) {
             int operand = 0;
