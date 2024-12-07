@@ -45,6 +45,7 @@ public:
     }
 };
 
-int precedence(char operator_);
-int applyOperator(int a, int b, char operator_);
-int infixEvaluator(const string& expression); 
+//Function declarations
+int precedence(char operator_); //Check for operator precedence
+int applyOperator(int a, int b, char operator_); //Applies operator for evaluation
+int infixEvaluator(const string& expression); //Evaluates expressions using infix

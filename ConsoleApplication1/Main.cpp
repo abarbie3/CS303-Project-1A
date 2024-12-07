@@ -1,11 +1,14 @@
-//Names: Alyssa Barbee, Aarohi Patel
+//Names: Alyssa Barbee, Aarohi Patel, Saw
 //Date: 
 //CS303 Project 1A
 
 #include "Project1A.h"
 
 int main() {
+
+    //Error handling with Try and Catch block
     try {
+        //Initialzed example expressions with a vector
          vector<string> myExpressions = {
              "1+2*3",
              "2+2^2*3",
@@ -16,9 +19,8 @@ int main() {
              "++++2-5*(3^2)"
          }; 
 
-         for (int i = 0; i < myExpressions.size(); ++i){
-             if (myExpressions[0] == ")" || myExpressions[0] == "<" || myExpressions[0] == "+")
-                 cout << "Expression can’t start with a " << myExpressions[0] << " @ char: 0" << endl;
+         //Evaluating and displaying expressions
+         for (int i = 0; i < myExpressions.size(); ++i) {
              infixEvaluator(myExpressions[i]);
              cout << endl;
          }

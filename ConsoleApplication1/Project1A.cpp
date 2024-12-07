@@ -1,11 +1,11 @@
 #include "Project1A.h"
 
-
+//Check for operator precedence
 int precedence(char operator_) {
     if (operator_ == '||') return 1;
     if (operator_ == '&&') return 2;
     if (operator_ == '==' || operator_ == '!=') return 3;
-    if (operator_ == '>' || operator_ == '>=' || operator_ == '<' || operator_ == '<=') return 4;
+    if (operator_ == '>' || operator_ == '>=' || operator_ == '<' || operator_ == '<=') return 4; 
     if (operator_ == '+' || operator_ == ' -') return 5;
     if (operator_ == '*' || operator_ == '/' || operator_ == '%') return 6;
     if (operator_ == '^') return 7;
@@ -14,6 +14,7 @@ int precedence(char operator_) {
     return 0;
 }
 
+//Applies operator for evaluation
 int applyOperator(int a, int b, char operator_) {
     switch (operator_) {
     case '+': return a + b;
@@ -38,10 +39,12 @@ int applyOperator(int a, int b, char operator_) {
     return 0;
 }
 
+//Evaluates expressions using infix
 int infixEvaluator(const string& expression) {
     myStack_with_vector<int> operands;
     myStack_with_vector<char> operators;
 
+    //Checks, error handles, and evaluates expressions
     for (size_t i = 0; i < expression.length(); i++) {
         if (isspace(expression[i])) continue;
 
