@@ -1,6 +1,7 @@
-//Names: Alyssa Barbee, Aarohi Patel, Saw
-//Date: 
-//CS303 Project 1A
+//Names: Alyssa Barbee, Aarohi Patel, Saw Nwe
+//Date: 12/6/24
+//CS303 Project 1A - Extra Credit
+//Note: Note: Aarohi helped with this project, but doesn't wants this extra credit assignment applied to her grade (just I and Saw)
 
 #include "Project1A.h"
 
