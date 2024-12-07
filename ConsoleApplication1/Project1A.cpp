@@ -5,7 +5,7 @@ int precedence(char operator_) {
     if (operator_ == '||') return 1;
     if (operator_ == '&&') return 2;
     if (operator_ == '==' || operator_ == '!=') return 3;
-    if (operator_ == '>' || operator_ == '>=' || operator_ == '<' || operator_ == '<=') return 4; //THIS IS WHERE I LEFT OFF
+    if (operator_ == '>' || operator_ == '>=' || operator_ == '<' || operator_ == '<=') return 4;
     if (operator_ == '+' || operator_ == ' -') return 5;
     if (operator_ == '*' || operator_ == '/' || operator_ == '%') return 6;
     if (operator_ == '^') return 7;
