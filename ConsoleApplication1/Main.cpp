@@ -17,13 +17,15 @@ int main() {
          }; 
 
          for (int i = 0; i < myExpressions.size(); ++i){
+             if (myExpressions[0] == ")" || myExpressions[0] == "<" || myExpressions[0] == "+")
+                 cout << "Expression can’t start with a " << myExpressions[0] << " @ char: 0" << endl;
              infixEvaluator(myExpressions[i]);
              cout << endl;
          }
 
      }
      catch(...){
-         cout << "There was an unexpected error.\n";
+         cout << "There was an unexpected error." << endl;
      }
     
     return 0;
