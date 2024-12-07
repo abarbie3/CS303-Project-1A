@@ -5,38 +5,26 @@
 #include "Project1A.h"
 
 int main() {
-    vector<string> myExpressions = {
-        "1+2*3",
-        "2+2^2*3",
-        "1==2",
-        "1+3 > 2",
-        "(4>=4) && 0",
-        "(1+2)*3",
-        "++++2-5*(3^2)"
-    };
+    try {
+         vector<string> myExpressions = {
+             "1+2*3",
+             "2+2^2*3",
+             "1==2",
+             "1+3 > 2",
+             "(4>=4) && 0",
+             "(1+2)*3",
+             "++++2-5*(3^2)"
+         }; 
 
-    for (int i = 0; i < myExpressions.size(); ++i) {
-        infixEvaluator(myExpressions[i]);
-    }
-    // try {
-    //     vector<string> myExpressions = {
-    //         "1+2*3",
-    //         "2+2^2*3",
-    //         "1==2",
-    //         "1+3 > 2",
-    //         "(4>=4) && 0",
-    //         "(1+2)*3",
-    //         "++++2-5*(3^2)"
-    //     }; 
+         for (int i = 0; i < myExpressions.size(); ++i){
+             infixEvaluator(myExpressions[i]);
+             cout << endl;
+         }
 
-    //     for (int i = 0; i < myExpressions.size(); ++i){
-    //         infixEvaluator(myExpressions[i]);
-    //     }
-
-    // }
-    // catch(...){
-    //     cout << "There was an unexpected error.\n";
-    // }
+     }
+     catch(...){
+         cout << "There was an unexpected error.\n";
+     }
     
     return 0;
 }

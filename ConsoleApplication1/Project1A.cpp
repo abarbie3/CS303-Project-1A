@@ -1,12 +1,16 @@
 #include "Project1A.h"
 
-//ADD: LESS THAN, COMPARISON, 
-
-
 
 int precedence(char operator_) {
-    if (operator_ == '+' || operator_ == '-') return 1;
-    if (operator_ == '*' || operator_ == '/') return 2;
+    if (operator_ == '||') return 1;
+    if (operator_ == '&&') return 2;
+    if (operator_ == '==' || operator_ == '!=') return 3;
+    if (operator_ == '>' || operator_ == '>=' || operator_ == '<' || operator_ == '<=') return 4; //THIS IS WHERE I LEFT OFF
+    if (operator_ == '+' || operator_ == ' -') return 5;
+    if (operator_ == '*' || operator_ == '/' || operator_ == '%') return 6;
+    if (operator_ == '^') return 7;
+    if (operator_ == '--' || operator_ == '++' || operator_ == '!') return 8;
+
     return 0;
 }
 
@@ -20,12 +24,17 @@ int applyOperator(int a, int b, char operator_) {
         return a / b;
     case '^': return pow(a, b);
     case '<': 
-        if (a < b) return 1;
-        else return 0;
+        return (a < b) ? 1 : 0;
     case '>': return 0;
-        if (a > b) return 1;
-        else return 0;
+        return (a > b) ? 1 : 0;
+    case '==':
+        return (a == b) ? 1 : 0;
+    case '!=':
+        return (a != b) ? 1 : 0;
     }
+
+    throw invalid_argument("Unknown operator: " + operator_);
+   
     return 0;
 }
 
@@ -35,7 +44,6 @@ int infixEvaluator(const string& expression) {
 
     for (size_t i = 0; i < expression.length(); i++) {
         if (isspace(expression[i])) continue;
-        if (expression[i] == '+') continue;
 
         if (isdigit(expression[i])) {
             int operand = 0;
@@ -85,6 +93,6 @@ int infixEvaluator(const string& expression) {
         operators.pop();
         operands.push(applyOperator(operand1, operand2, operator_));
     }
-
+    cout << operands.top();
     return operands.top();
 }
